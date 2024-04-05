@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="results"></div>
+ <script>
+
+
+        const arr = [
+            {
+                imgUrl: 'https://img.freepik.com/free-vector/realistic-smartphone-device_52683-29765.jpg?w=996',
+                title : "Iphone 13 pro max",
+                description : "lorem",
+                price: "15000$"
+            },
+            {
+                imgUrl: 'https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?w=1060',
+                title : "Lenvo laptop",
+                description : "laptop ",
+                price: "12000$"
+            },
+            {
+                imgUrl: 'https://img.freepik.com/free-psd/smartphone-mockup_1310-812.jpg?w=1060',
+                title : "Samsung Glaxy 13",
+                description : "amazing phone",
+                price: "15000$"
+            },
+        ]
+
+        let text = prompt("Enter the text to search: ").toLowerCase();
+
+        function check(text) {
+            
+            return text.cont
+            
+        }
+
+        let filiter = arr.filter(function (item){
+            if(item.title.toLowerCase().includes(text)||item.description.toLowerCase().includes(text)){
+                return item
+            }
+        })
+console.log(filiter)
+       
+           const resultsContainer = document.getElementById("results");
+
+           
+            filiter.forEach(product => {
+        const productElement = document.createElement("div");
+        productElement.innerHTML = `
+        <img src="${product.imgUrl}" alt="" width=100px height=100px>
+        <h2>${product.title}</h2>
+          <p>Description: ${product.description}</p>
+          <p>price: $${product.price}</p>
+          <hr>
+        `;
+        resultsContainer.appendChild(productElement);
+      });
+    console.log(resultsContainer);
+
+    </script> 
+
+</body>
+</html>
